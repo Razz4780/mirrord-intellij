@@ -29,7 +29,10 @@ class NodeRunConfigurationExtension : AbstractNodeRunConfigurationExtension() {
         return null
     }
 
-    override fun createLaunchSession(configuration: AbstractNodeTargetRunProfile, environment: ExecutionEnvironment): NodeRunConfigurationLaunchSession {
+    override fun createLaunchSession(
+        configuration: AbstractNodeTargetRunProfile,
+        environment: ExecutionEnvironment
+    ): NodeRunConfigurationLaunchSession {
         return object : NodeRunConfigurationLaunchSession() {
             override fun addNodeOptionsTo(targetRun: NodeTargetRun) {
                 val service = targetRun.project.service<MirrordProjectService>()
